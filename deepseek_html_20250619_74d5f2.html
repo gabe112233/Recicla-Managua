@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReciclAndo Managua - Recompensando el Reciclaje</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --accent: #8bc34a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h1, h2, h3 {
+            color: var(--dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .app-screenshot {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team {
+            background-color: var(--light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--accent);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://via.placeholder.com/120" alt="Logo ReciclAndo Managua" class="logo">
+            <h1>ReciclAndo Managua</h1>
+            <p>Recompensando el Reciclaje para una movilidad urbana sostenible</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyecto">El Proyecto</a></li>
+            <li><a href="#app">La App</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>Transforma tus residuos en transporte sostenible</h2>
+            <p>Una solución innovadora para reducir la contaminación en Managua mientras ganas beneficios para tu movilidad</p>
+            <a href="#app" class="btn">Descarga la App</a>
+        </div>
+    </section>
+    
+    <section id="proyecto">
+        <div class="container">
+            <h2>El Proyecto</h2>
+            <p>ReciclAndo Managua es una iniciativa que busca fomentar el reciclaje en la ciudad mediante un sistema de recompensas digitales aplicables al transporte público. Nuestro objetivo es reducir la contaminación ambiental mientras mejoramos la movilidad urbana.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Reciclaje Inteligente</h3>
+                    <p>Clasifica tus residuos reciclables y programa su recolección desde la comodidad de tu hogar.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Transporte Gratis</h3>
+                    <p>Convierte tus residuos en saldo digital para usar en el transporte público de Managua.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Impacto Ambiental</h3>
+                    <p>Contribuye a reducir la contaminación de cauces y calles mientras ganas beneficios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <h2>Nuestro Impacto en Números</h2>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1,200+</div>
+                    <p>Usuarios registrados</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15.5</div>
+                    <p>Toneladas de residuos recolectados</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <p>Barrios beneficiados</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <p>Viajes en transporte público generados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="app">
+        <div class="container">
+            <h2>La Aplicación Móvil</h2>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>ReciclAndo App</h3>
+                    <p>Descarga nuestra aplicación y comienza a transformar tus residuos en beneficios hoy mismo:</p>
+                    <ul>
+                        <li>Registro fácil y rápido</li>
+                        <li>Programación de recolección a domicilio</li>
+                        <li>Seguimiento de tus créditos acumulados</li>
+                        <li>Mapa de centros de acopio cercanos</li>
+                        <li>Noticias y tips de reciclaje</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn" style="margin-right: 1rem;"><i class="fab fa-google-play"></i> Play Store</a>
+                        <a href="#" class="btn"><i class="fab fa-apple"></i> App Store</a>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="https://via.placeholder.com/300x500" alt="Captura de pantalla de la app" class="app-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="beneficios">
+        <div class="container">
+            <h2>Beneficios del Proyecto</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Para la Ciudad</h3>
+                    <ul>
+                        <li>Reducción de basura en cauces y calles</li>
+                        <li>Menor riesgo de inundaciones</li>
+                        <li>Mejor calidad del aire y suelos</li>
+                        <li>Ciudad más limpia y sostenible</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Para los Ciudadanos</h3>
+                    <ul>
+                        <li>Transporte público gratuito</li>
+                        <li>Facilidad para reciclar desde casa</li>
+                        <li>Contribución al medio ambiente</li>
+                        <li>Participación en una economía circular</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Para el Planeta</h3>
+                    <ul>
+                        <li>Reducción de emisiones contaminantes</li>
+                        <li>Menor explotación de recursos naturales</li>
+                        <li>Promoción de la cultura del reciclaje</li>
+                        <li>Modelo replicable en otras ciudades</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team" id="equipo">
+        <div class="container">
+            <h2>Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Gabriel Palacios" class="team-img">
+                    <h3>Gabriel Palacios</h3>
+                    <p>Líder del Proyecto</p>
+                    <p>Ingeniero en Sistemas</p>
+                </div>
+                
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Pablo Argeñal" class="team-img">
+                    <h3>Pablo Argeñal</h3>
+                    <p>Asesor Técnico</p>
+                    <p>Docente UNI</p>
+                </div>
+                
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Equipo de desarrollo" class="team-img">
+                    <h3>Equipo de Desarrollo</h3>
+                    <p>Programadores y diseñadores</p>
+                    <p>Universidad Nacional de Ingeniería</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Quieres saber más sobre el proyecto o colaborar con nosotros?</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>Información de Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Universidad Nacional de Ingeniería, Managua, Nicaragua</p>
+                    <p><i class="fas fa-phone"></i> +505 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@reciclandomanagua.org</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" style="width: 100%; padding: 0.5rem;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="email">Correo:</label>
+                            <input type="email" id="email" name="email" style="width: 100%; padding: 0.5rem;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.5rem;"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <img src="https://via.placeholder.com/100" alt="Logo ReciclAndo Managua" style="margin-bottom: 1rem;">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2023 ReciclAndo Managua. Todos los derechos reservados.</p>
+            <p>Una iniciativa de la Universidad Nacional de Ingeniería</p>
+        </div>
+    </footer>
+</body>
+</html>
